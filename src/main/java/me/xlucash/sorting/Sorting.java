@@ -36,25 +36,21 @@ public class Sorting {
         recursiveQuickSort(array, 0, array.length - 1);
     }
     private static int partition(int[] array, int left, int right) {
-        int pivot = array[left]; // taking first element as pivot
+        int pivot = array[left];
 
         while (left <= right) {
-            //searching number which is greater than pivot, bottom up
             while (array[left] < pivot) {
                 left++;
             }
-            //searching number which is less than pivot, top down
             while (array[right] > pivot) {
                 right--;
             }
 
-            // swap the values
             if (left <= right) {
                 int tmp = array[left];
                 array[left] = array[right];
                 array[right] = tmp;
 
-                //increment left index and decrement right index
                 left++;
                 right--;
             }
@@ -62,17 +58,14 @@ public class Sorting {
         return left;
     }
 
-    public static void recursiveQuickSort(int[] array, int startIdx,
-                                          int endIdx) {
+    public static void recursiveQuickSort(int[] array, int startIdx, int endIdx) {
 
         int idx = partition(array, startIdx, endIdx);
 
-        // Recursively call quicksort with left part of the partitioned array
         if (startIdx < idx - 1) {
             recursiveQuickSort(array, startIdx, idx - 1);
         }
 
-        // Recursively call quick sort with right part of the partitioned array
         if (endIdx > idx) {
             recursiveQuickSort(array, idx, endIdx);
         }
