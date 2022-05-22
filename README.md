@@ -1,5 +1,9 @@
 # Sorting - form app
 Sorting app written in Java using Swing library
+## Technology
+- __IDE__: IntelliJ
+
+- __Language__: Java
 ## About project
 The application allows you to generate a sequence of random numbers and then sort them in 3 different ways:
  - ### Bubble Sort
