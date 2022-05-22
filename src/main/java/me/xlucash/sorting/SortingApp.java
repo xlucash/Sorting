@@ -422,7 +422,7 @@ public class SortingApp extends javax.swing.JFrame {
             txtPosition.setText("");
             int wanted = Integer.parseInt(txtWanted.getText());
             int[] copyForWantedNumber = numberArray.clone();
-            bubbleSort(copyForWantedNumber);
+            quickSort(copyForWantedNumber);
 
             if(findNumber(wanted, copyForWantedNumber)==0)
             {

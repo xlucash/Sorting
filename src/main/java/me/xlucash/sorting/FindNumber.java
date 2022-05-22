@@ -5,28 +5,16 @@ import org.w3c.dom.ranges.RangeException;
 public class FindNumber {
     public static int findNumber(int wanted, int[] array)
     {
-        int start = 0;
-        int end = array.length-1;
-        int avg = 0;
-
         try
         {
-            while(start<=end)
+            for (int i = 0; 0 < array.length; i++)
             {
-                avg = (start+end)/2;
-                if(wanted == array[avg])
+                if (array[i] == wanted)
                 {
-                    return avg +1;
-                }
-                else
-                if(wanted>array[avg])
-                {
-                    start+=avg+1;
-                } else if(wanted<array[avg])
-                {
-                    end = avg-1;
+                    return i + 1;
                 }
             }
+            return -1;
         } catch (RangeException e)
         {
             System.out.println("Błąd: "+e.getMessage());
